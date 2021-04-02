@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:id="mainPane" prefHeight="900.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/15.0.1" fx:controller="hogwarts.game01.GameCon01">
+<AnchorPane fx:id="mainPane" prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hogwarts.game01.GameCon01">
    <children>
       <Label fx:id="lblHome" layoutX="30.0" layoutY="30.0" onMouseClicked="#goHome" styleClass="label-content" text="Go Home" />
       <Label fx:id="lblTitle" alignment="CENTER" layoutY="90.0" prefWidth="1200.0" text="Game Title">
@@ -13,5 +19,155 @@
             <Font size="48.0" />
          </font>
       </Label>
+      <GridPane alignment="CENTER" layoutX="150.0" layoutY="167.0" prefHeight="700.0" prefWidth="900.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ImageView fx:id="card1" fitHeight="225.0" fitWidth="145.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/img/game01/card_backside.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="card2" fitHeight="225.0" fitWidth="145.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+               <image>
+                  <Image url="@../../../resources/img/game01/card_backside.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="card3" fitHeight="225.0" fitWidth="145.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+               <image>
+                  <Image url="@../../../resources/img/game01/card_backside.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="card4" fitHeight="225.0" fitWidth="145.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+               <image>
+                  <Image url="@../../../resources/img/game01/card_backside.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="card5" fitHeight="225.0" fitWidth="145.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
+               <image>
+                  <Image url="@../../../resources/img/game01/card_backside.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="card6" fitHeight="225.0" fitWidth="145.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5">
+               <image>
+                  <Image url="@../../../resources/img/game01/card_backside.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="card7" fitHeight="225.0" fitWidth="145.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../../../resources/img/game01/card_backside.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="card8" fitHeight="225.0" fitWidth="145.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../../../resources/img/game01/card_backside.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="card9" fitHeight="225.0" fitWidth="145.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../../../resources/img/game01/card_backside.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="card10" fitHeight="225.0" fitWidth="145.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../../../resources/img/game01/card_backside.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="card16" fitHeight="225.0" fitWidth="145.0" layoutX="460.0" layoutY="248.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@../../../resources/img/game01/card_backside.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="card15" fitHeight="225.0" fitWidth="145.0" layoutX="610.0" layoutY="248.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@../../../resources/img/game01/card_backside.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="card14" fitHeight="225.0" fitWidth="145.0" layoutX="160.0" layoutY="248.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@../../../resources/img/game01/card_backside.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="card13" fitHeight="225.0" fitWidth="145.0" layoutX="310.0" layoutY="248.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@../../../resources/img/game01/card_backside.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="card12" fitHeight="225.0" fitWidth="145.0" layoutX="460.0" layoutY="248.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@../../../resources/img/game01/card_backside.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="card11" fitHeight="225.0" fitWidth="145.0" layoutX="610.0" layoutY="248.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@../../../resources/img/game01/card_backside.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </GridPane>
+      <Label alignment="CENTER" layoutX="1022.0" layoutY="30.0" onMouseClicked="#goHome" prefHeight="14.0" prefWidth="145.0" styleClass="label-content" text="Score" />
+      <Label fx:id="lblScore" alignment="CENTER" layoutX="1022.0" layoutY="76.0" onMouseClicked="#goHome" prefHeight="14.0" prefWidth="145.0" styleClass="label-content" text="0" />
    </children>
 </AnchorPane>

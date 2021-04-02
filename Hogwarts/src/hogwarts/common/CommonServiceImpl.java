@@ -16,4 +16,10 @@ public class CommonServiceImpl implements CommonService {
 		return result;
 	}
 
+	@Override
+	public void alert(String msg) {
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setContentText(msg);
+		alert.showAndWait();
+	}
 }

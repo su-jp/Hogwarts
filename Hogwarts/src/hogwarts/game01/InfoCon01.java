@@ -47,7 +47,8 @@ public class InfoCon01 implements Initializable {
 	}
 	
 	private void setGameInfo() {
-		lblInfo.setText("Here are 16 cards with one of eight Horcruxes randomly drawn.\n"
+		lblInfo.setText("Here are 16 cards\n"
+				+ "with one of Horcruxes randomly drawn.\n"
 				+ "Turn the cards over to find and destroy\n"
 				+ "all of Voldemort's Horcruxes.");
 	}
