@@ -4,6 +4,7 @@ ___
 > ## 💻 스택
 - [x] Java
 - [x] JavaFx
+- [x] Photoshop
 - [x] CSS
 ___
 > ## 🙋‍♀️ 참여
