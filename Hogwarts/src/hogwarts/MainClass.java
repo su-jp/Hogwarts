@@ -10,7 +10,6 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class MainClass extends Application {
-
 	@Override
 	public void start(Stage primaryStage) throws IOException {
 		Font.loadFont(getClass().getResourceAsStream("../../resources/NewTegomin-Regular.ttf"), 14);

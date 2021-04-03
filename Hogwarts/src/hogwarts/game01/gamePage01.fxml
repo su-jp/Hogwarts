@@ -34,6 +34,86 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
+            <ImageView fx:id="img1" fitHeight="225.0" fitWidth="145.0" layoutX="10.0" layoutY="15.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="img16" fitHeight="225.0" fitWidth="145.0" layoutX="160.0" layoutY="15.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="2">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="img15" fitHeight="225.0" fitWidth="145.0" layoutX="310.0" layoutY="15.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="img14" fitHeight="225.0" fitWidth="145.0" layoutX="460.0" layoutY="15.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="img13" fitHeight="225.0" fitWidth="145.0" layoutX="610.0" layoutY="15.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="img12" fitHeight="225.0" fitWidth="145.0" layoutX="760.0" layoutY="15.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="img11" fitHeight="225.0" fitWidth="145.0" layoutX="160.0" layoutY="248.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="img10" fitHeight="225.0" fitWidth="145.0" layoutX="310.0" layoutY="248.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="img9" fitHeight="225.0" fitWidth="145.0" layoutX="460.0" layoutY="248.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="img8" fitHeight="225.0" fitWidth="145.0" layoutX="610.0" layoutY="248.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="img7" fitHeight="225.0" fitWidth="145.0" layoutX="760.0" layoutY="481.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="img6" fitHeight="225.0" fitWidth="145.0" layoutX="610.0" layoutY="481.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="img5" fitHeight="225.0" fitWidth="145.0" layoutX="460.0" layoutY="481.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="img4" fitHeight="225.0" fitWidth="145.0" layoutX="310.0" layoutY="481.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="img3" fitHeight="225.0" fitWidth="145.0" layoutX="160.0" layoutY="481.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="img2" fitHeight="225.0" fitWidth="145.0" layoutX="10.0" layoutY="481.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
             <ImageView fx:id="card1" fitHeight="225.0" fitWidth="145.0" onMouseClicked="#getCardNum" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../resources/img/game01/card_backside.png" />
