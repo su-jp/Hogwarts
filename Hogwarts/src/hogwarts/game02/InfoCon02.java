@@ -50,7 +50,7 @@ public class InfoCon02 implements Initializable {
 		lblInfo.setText("You're in the Hall of Prophecy,\n"
 				+ "a chamber within the Department of Mysteries.\n"
 				+ "Type the prophecy recorded in each glass orb\n"
-				+ "before it fall down,\n"
+				+ "before it falls down to the floor,\n"
 				+ "and save Harry Potter and his friends.");
 	}
 	
