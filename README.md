@@ -17,13 +17,20 @@ ___
 > ## 🎮 미리보기
 ### 🃏 첫번째 게임 "WARNING : Horcrux"
 - 게임 시작
-
-   ![hogwarts01_gameStartgif](https://user-images.githubusercontent.com/76279992/113436418-a484dd80-941f-11eb-9f68-29568bf0a922.gif)
+   - 진입 화면
+   
+      ![game1_01_start](https://user-images.githubusercontent.com/76279992/113470093-cd43bc00-948d-11eb-9eb3-b1788d2fa5bd.gif)
 
 - 게임 진행
-
-   ![hogwarts01_gamePlaying](https://user-images.githubusercontent.com/76279992/113435818-88347100-941e-11eb-9d68-559cdb6fe9c7.gif)
+   - 플레이 화면
+   
+      ![game1_02_playing](https://user-images.githubusercontent.com/76279992/113470095-ce74e900-948d-11eb-8e5b-b6a0e833dc6d.gif)
+   
+   - 카드 랜덤 배치
+   
+      ![game1_03_showRandom](https://user-images.githubusercontent.com/76279992/113470098-cf0d7f80-948d-11eb-9de0-8de7fc8c53ee.gif)
 
 - 게임 종료
-
-   ![hogwarts01_gameDone](https://user-images.githubusercontent.com/76279992/113435814-87034400-941e-11eb-85c4-c71872dcb179.gif)
+   - 성공 화면
+   
+      ![game1_04_done](https://user-images.githubusercontent.com/76279992/113470099-cfa61600-948d-11eb-8927-c29a8b748272.gif)
