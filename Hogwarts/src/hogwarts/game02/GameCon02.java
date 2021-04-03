@@ -9,18 +9,26 @@ import hogwarts.common.CommonService;
 import hogwarts.common.CommonServiceImpl;
 import hogwarts.common.MyLabelEventHandler;
 import hogwarts.common.MyLabelEventHandler02;
+import javafx.animation.PathTransition;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.CubicCurveTo;
+import javafx.scene.shape.MoveTo;
+import javafx.scene.shape.Path;
+import javafx.util.Duration;
 
 public class GameCon02 implements Initializable {
 	@FXML AnchorPane mainPane;
 	@FXML Label lblHome, lblTitle;
+	@FXML ImageView testOrb;
 	CommonService cs;
 	
 	@Override
@@ -28,9 +36,21 @@ public class GameCon02 implements Initializable {
 		cs = new CommonServiceImpl();
 		lblScale();
 		setGameTitle();
+		fallDown(testOrb, 150);
 	}
 	
-	
+	private void fallDown(ImageView orb, int axis) {
+		Path path = new Path();
+		path.getElements().add(new MoveTo(axis, -30));
+		path.getElements().add(new CubicCurveTo(axis + 100, 300, axis - 100, 600, axis, 1200));
+		PathTransition pathTransition = new PathTransition(); pathTransition.setDuration(Duration.millis(6000));
+		pathTransition.setPath(path);
+		pathTransition.setNode(orb);
+		pathTransition.setOrientation(PathTransition.OrientationType.ORTHOGONAL_TO_TANGENT);
+		pathTransition.setCycleCount(Timeline.INDEFINITE);
+		pathTransition.setAutoReverse(false);
+		pathTransition.play();
+	}
 	
 	public void goHome() {
 		Optional<ButtonType> result = cs.alertConfirm("Go back to the main page.");
