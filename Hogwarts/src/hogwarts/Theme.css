@@ -7,13 +7,20 @@
     -fx-font-family: "New Tegomin";
     -fx-text-fill: white;
     -fx-opacity: 1;
+    -fx-effect: dropshadow( two-pass-box , rgba(0,0,0,1) , 10, 0, 2, 2 );
 }
 
 .label-content {
     -fx-font-size: 24pt;
-    -fx-font-family: "New Tegomin";
     -fx-text-fill: white;
     -fx-opacity: 1;
+    -fx-effect: dropshadow( two-pass-box , rgba(0,0,0,1) , 10, 0, 2, 2 );
+}
+
+.label-dark {
+	-fx-font-size: 24pt;
+    -fx-text-fill: #2c2c2c;
+    -fx-effect: dropshadow( two-pass-box , rgba(255,255,255,1) , 1, 0, 2, 2 );
 }
 
 .text-field {

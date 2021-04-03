@@ -5,6 +5,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="mainPane" prefHeight="900.0" prefWidth="1200.0" stylesheets="@../Theme.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hogwarts.game02.GameCon02">
@@ -17,7 +18,7 @@
       </Label>
       <AnchorPane fx:id="paneOrb1" layoutX="0.0" layoutY="-170" prefHeight="120.0" prefWidth="120.0">
          <children>
-            <Label fx:id="word1" contentDisplay="CENTER" rotate="-90.0" styleClass="label-content" stylesheets="@../Theme.css" text="keyword">
+            <Label fx:id="word1" contentDisplay="CENTER" rotate="-90.0" styleClass="label-dark" stylesheets="@../Theme.css" text="keyword">
                 <graphic>
                   <ImageView fitHeight="0.0" fitWidth="0.0" pickOnBounds="true" preserveRatio="true">
                    <Image url="@../../../resources/img/game02/orb01.png" />
@@ -28,7 +29,7 @@
       </AnchorPane>
       <AnchorPane fx:id="paneOrb2" layoutX="230.0" layoutY="-170.0" prefHeight="120.0" prefWidth="120.0">
          <children>
-            <Label fx:id="word2" contentDisplay="CENTER" rotate="-90.0" styleClass="label-content" stylesheets="@../Theme.css" text="keyword">
+            <Label fx:id="word2" contentDisplay="CENTER" rotate="-90.0" styleClass="label-dark" stylesheets="@../Theme.css" text="keyword">
                <graphic>
                   <ImageView fitHeight="0.0" fitWidth="0.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -41,7 +42,7 @@
       </AnchorPane>
       <AnchorPane fx:id="paneOrb3" layoutX="510.0" layoutY="-170.0" prefHeight="120.0" prefWidth="120.0">
          <children>
-            <Label fx:id="word3" contentDisplay="CENTER" rotate="-90.0" styleClass="label-content" stylesheets="@../Theme.css" text="keyword">
+            <Label fx:id="word3" contentDisplay="CENTER" rotate="-90.0" styleClass="label-dark" stylesheets="@../Theme.css" text="keyword">
                <graphic>
                   <ImageView fitHeight="0.0" fitWidth="0.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -54,7 +55,7 @@
       </AnchorPane>
       <AnchorPane fx:id="paneOrb4" layoutX="740.0" layoutY="-170.0" prefHeight="120.0" prefWidth="120.0">
          <children>
-            <Label fx:id="word4" contentDisplay="CENTER" rotate="-90.0" styleClass="label-content" stylesheets="@../Theme.css" text="keyword">
+            <Label fx:id="word4" contentDisplay="CENTER" rotate="-90.0" styleClass="label-dark" stylesheets="@../Theme.css" text="keyword">
                <graphic>
                   <ImageView fitHeight="0.0" fitWidth="0.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -67,7 +68,7 @@
       </AnchorPane>
       <AnchorPane fx:id="paneOrb5" layoutX="920.0" layoutY="-170.0" prefHeight="120.0" prefWidth="120.0">
          <children>
-            <Label fx:id="word5" contentDisplay="CENTER" rotate="-90.0" styleClass="label-content" stylesheets="@../Theme.css" text="keyword">
+            <Label fx:id="word5" contentDisplay="CENTER" rotate="-90.0" styleClass="label-dark" stylesheets="@../Theme.css" text="keyword">
                <graphic>
                   <ImageView fitHeight="0.0" fitWidth="0.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -81,5 +82,25 @@
       <TextField fx:id="txtField" layoutX="387.0" layoutY="781.0" prefHeight="57.0" prefWidth="427.0" styleClass="label-content" />
       <Label alignment="CENTER" layoutX="1022.0" layoutY="30.0" onMouseClicked="#goHome" prefHeight="14.0" prefWidth="145.0" styleClass="label-content" text="Score" />
       <Label fx:id="lblScore" alignment="CENTER" layoutX="1022.0" layoutY="76.0" onMouseClicked="#goHome" prefHeight="14.0" prefWidth="145.0" styleClass="label-content" text="0" />
+      <Label alignment="CENTER" layoutX="848.0" layoutY="30.0" onMouseClicked="#goHome" prefHeight="14.0" prefWidth="145.0" styleClass="label-content" text="Life" />
+      <HBox layoutX="821.0" layoutY="69.0" prefHeight="64.0" prefWidth="200.0">
+         <children>
+            <ImageView fx:id="life1" fitHeight="63.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/img/game02/lightning.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="life2" fitHeight="63.0" fitWidth="71.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/img/game02/lightning.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="life3" fitHeight="63.0" fitWidth="71.0" layoutX="73.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/img/game02/lightning.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

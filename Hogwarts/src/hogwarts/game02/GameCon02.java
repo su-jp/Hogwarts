@@ -27,6 +27,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -40,27 +41,47 @@ public class GameCon02 implements Initializable {
 	@FXML private AnchorPane mainPane, paneOrb1, paneOrb2, paneOrb3, paneOrb4, paneOrb5;
 	@FXML private Label lblHome, lblTitle, word1, word2, word3, word4, word5, lblScore;
 	@FXML private TextField txtField;
+	@FXML private ImageView life1, life2, life3;
 	CommonService cs;
-	List<String> words;
+	List<String> words, txtMatch;
 	File wordTxt;
 	BufferedReader reader;
 	Random rand;
-	TimerTask tt, t1, t2, t3, t4;
-	int lightening, score;
+	TimerTask tt, t1, t2, t3, t4, tc1, tc2, tc3, tc4, tc5;
+	int life, score;
 	String inputTxt;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		score = 0;
-		lightening = 3;
+		life = 3;
 		cs = new CommonServiceImpl();
 		words = new ArrayList<String>();
+		txtMatch = new ArrayList<String>();
 		wordTxt = new File(".\\resources\\words.txt");
+		setGameTitle();
 		txtFieldEvent();
 		callWords();
 		lblScale();
-		setGameTitle();
 		setOrbs();
+	}
+	
+	private void countdown() {
+		if(life <= 0) { return; }
+		if(life3.isVisible()) {
+			life3.setVisible(false);
+			life--;
+		} else if(life2.isVisible()) {
+			life2.setVisible(false);
+			life--;
+		} else {
+			life3.setVisible(false);
+			life--;
+			txtField.setDisable(true);
+			cs.alert("Game Over!\n"
+					+ "You've saved " + score + " glass orbs!");
+			loadPage("../mainPage");
+		}
 	}
 	
 	private void setScore(int n) {
@@ -70,18 +91,23 @@ public class GameCon02 implements Initializable {
 	private void compareTxts(String txt) {
 		if(txt.equals(word1.getText())) {
 			paneOrb1.setVisible(false);
+			txtMatch.set(0, "dead");
 			score++;
 		} else if(txt.equals(word2.getText())) {
 			paneOrb2.setVisible(false);
+			txtMatch.set(1, "dead");
 			score++;
 		} else if(txt.equals(word3.getText())) {
 			paneOrb3.setVisible(false);
+			txtMatch.set(2, "dead");
 			score++;
 		} else if(txt.equals(word4.getText())) {
 			paneOrb4.setVisible(false);
+			txtMatch.set(3, "dead");
 			score++;
 		} else if(txt.equals(word5.getText())) {
 			paneOrb5.setVisible(false);
+			txtMatch.set(4, "dead");
 			score++;
 		}
 		setScore(score);
@@ -120,57 +146,127 @@ public class GameCon02 implements Initializable {
 	}
 
 	private void setOrbs() {
+		for(int i=0; i<5; i++) { txtMatch.add("alive"); }
 		Timer timer = new Timer();
 		tt = new TimerTask() {
 			@Override
 			public void run() {
 				Platform.runLater(() -> {
+					if(life <= 0) { timer.cancel(); }
+					txtMatch.set(1, "alive");
+					paneOrb2.setVisible(true);
 					fallDown(paneOrb2, 150);
 					putWords(word2);
 				});
 			}
 		};
-		timer.schedule(tt, 1, 10000);
+		timer.schedule(tt, 1, 15000);
 		t1 = new TimerTask() {
 			@Override
 			public void run() {
 				Platform.runLater(() -> {
+					if(life <= 0) { timer.cancel(); }
+					txtMatch.set(0, "alive");
+					paneOrb1.setVisible(true);
 					fallDown(paneOrb1, 150);
 					putWords(word1);
 				});
 			}
 		};
-		timer.schedule(t1, 2000, 10000);
+		timer.schedule(t1, 3000, 15000);
 		t2 = new TimerTask() {
 			@Override
 			public void run() {
 				Platform.runLater(() -> {
+					if(life <= 0) { timer.cancel(); }
+					txtMatch.set(4, "alive");
+					paneOrb5.setVisible(true);
 					fallDown(paneOrb5, 150);
 					putWords(word5);
 				});
 			}
 		};
-		timer.schedule(t2, 4000, 10000);
+		timer.schedule(t2, 6000, 15000);
 		t3 = new TimerTask() {
 			@Override
 			public void run() {
 				Platform.runLater(() -> {
-				fallDown(paneOrb3, 150);
-				putWords(word3);
+					if(life <= 0) { timer.cancel(); }
+					txtMatch.set(2, "alive");
+					paneOrb3.setVisible(true);
+					fallDown(paneOrb3, 150);
+					putWords(word3);
 				});
 			}
 		};
-		timer.schedule(t3, 6000, 10000);
+		timer.schedule(t3, 9000, 15000);
 		t4 = new TimerTask() {
 			@Override
 			public void run() {
 				Platform.runLater(() -> {
+					if(life <= 0) { timer.cancel(); }
+					txtMatch.set(3, "alive");
+					paneOrb4.setVisible(true);
 					fallDown(paneOrb4, 150);
 					putWords(word4);
 				});
 			}
 		};
-		timer.schedule(t4, 8000, 10000);
+		timer.schedule(t4, 12000, 15000);
+		
+		Timer timer2 = new Timer();
+		tc1 = new TimerTask() {
+			@Override
+			public void run() {
+				Platform.runLater(() -> {
+					if(life <= 0) { timer2.cancel(); }
+					if(txtMatch.get(1).equals("alive")) {
+						countdown();
+					}
+				});
+			}
+		};
+		timer2.schedule(tc1, 13000, 15000);
+		tc2 = new TimerTask() {
+			@Override
+			public void run() {
+				Platform.runLater(() -> {
+					if(life <= 0) { timer2.cancel(); }
+					if(txtMatch.get(0).equals("alive")) { countdown(); }
+				});
+			}
+		};
+		timer2.schedule(tc2, 16000, 15000);
+		tc3 = new TimerTask() {
+			@Override
+			public void run() {
+				Platform.runLater(() -> {
+					if(life <= 0) { timer2.cancel(); }
+					if(txtMatch.get(4).equals("alive")) { countdown(); }
+				});
+			}
+		};
+		timer2.schedule(tc3, 19000, 15000);
+		tc4 = new TimerTask() {
+			@Override
+			public void run() {
+				Platform.runLater(() -> {
+					if(life <= 0) { timer2.cancel(); }
+					if(txtMatch.get(2).equals("alive")) { countdown(); }
+				});
+			}
+		};
+		timer2.schedule(tc4, 22000, 15000);
+		tc5 = new TimerTask() {
+			@Override
+			public void run() {
+				Platform.runLater(() -> {
+					if(life <= 0) { timer2.cancel(); }
+					if(txtMatch.get(3).equals("alive")) { countdown(); }
+				});
+			}
+		};
+		timer2.schedule(tc5, 25000, 15000);
 	}
 
 	private void fallDown(AnchorPane orb, int axis) {
@@ -178,7 +274,7 @@ public class GameCon02 implements Initializable {
 		path.getElements().add(new MoveTo(axis, -30));
 		path.getElements().add(new CubicCurveTo(axis + 100, 300, axis - 100, 600, axis, 1200));
 		PathTransition pathTransition = new PathTransition();
-		pathTransition.setDuration(Duration.millis(10000));
+		pathTransition.setDuration(Duration.millis(15000));
 		pathTransition.setPath(path);
 		pathTransition.setNode(orb);
 		pathTransition.setOrientation(PathTransition.OrientationType.ORTHOGONAL_TO_TANGENT);
