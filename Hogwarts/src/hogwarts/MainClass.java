@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 public class MainClass extends Application {
 	@Override
 	public void start(Stage primaryStage) throws IOException {
-		Font.loadFont(getClass().getResourceAsStream("../../resources/NewTegomin-Regular.ttf"), 14);
+		Font.loadFont(getClass().getResourceAsStream("NewTegomin-Regular.ttf"), 14);
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("mainPage.fxml"));
 		Parent root = loader.load();
 		Scene scene = new Scene(root);
