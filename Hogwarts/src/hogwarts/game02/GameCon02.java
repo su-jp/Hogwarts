@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import hogwarts.common.CommonService;
 import hogwarts.common.CommonServiceImpl;
@@ -26,7 +28,7 @@ import javafx.scene.shape.Path;
 import javafx.util.Duration;
 
 public class GameCon02 implements Initializable {
-	@FXML AnchorPane mainPane, paneOrb;
+	@FXML AnchorPane mainPane, paneOrb1, paneOrb2, paneOrb3, paneOrb4, paneOrb5;
 	@FXML Label lblHome, lblTitle;
 	CommonService cs;
 	
@@ -35,14 +37,47 @@ public class GameCon02 implements Initializable {
 		cs = new CommonServiceImpl();
 		lblScale();
 		setGameTitle();
-		fallDown(paneOrb, 150);
+		setOrbs();
+	}
+	
+	private void setOrbs() {
+		fallDown(paneOrb2, 150);
+		Timer timer = new Timer();
+		TimerTask t1 = new TimerTask() {
+			@Override
+			public void run() {
+				fallDown(paneOrb1, 150);
+			}
+		};
+		timer.schedule(t1, 2000);
+		TimerTask t2 = new TimerTask() {
+			@Override
+			public void run() {
+				fallDown(paneOrb5, 150);
+			}
+		};
+		timer.schedule(t2, 4000);
+		TimerTask t3 = new TimerTask() {
+			@Override
+			public void run() {
+				fallDown(paneOrb3, 150);
+			}
+		};
+		timer.schedule(t3, 6000);
+		TimerTask t4 = new TimerTask() {
+			@Override
+			public void run() {
+				fallDown(paneOrb4, 150);
+			}
+		};
+		timer.schedule(t4, 8000);
 	}
 	
 	private void fallDown(AnchorPane orb, int axis) {
 		Path path = new Path();
 		path.getElements().add(new MoveTo(axis, -30));
 		path.getElements().add(new CubicCurveTo(axis + 100, 300, axis - 100, 600, axis, 1200));
-		PathTransition pathTransition = new PathTransition(); pathTransition.setDuration(Duration.millis(6000));
+		PathTransition pathTransition = new PathTransition(); pathTransition.setDuration(Duration.millis(10000));
 		pathTransition.setPath(path);
 		pathTransition.setNode(orb);
 		pathTransition.setOrientation(PathTransition.OrientationType.ORTHOGONAL_TO_TANGENT);

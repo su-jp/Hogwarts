@@ -14,15 +14,67 @@
             <Font size="48.0" />
          </font>
       </Label>
-      <AnchorPane fx:id="paneOrb" layoutX="10.0" layoutY="-170" prefHeight="120.0" prefWidth="120.0">
+      <AnchorPane fx:id="paneOrb1" layoutX="0.0" layoutY="-170" prefHeight="120.0" prefWidth="120.0">
          <children>
-            <Label contentDisplay="CENTER" rotate="-90.0" styleClass="label-content" stylesheets="@../Theme.css" text="keyword">
+            <Label fx:id="word1" contentDisplay="CENTER" rotate="-90.0" styleClass="label-content" stylesheets="@../Theme.css" text="keyword">
                 <graphic>
                   <ImageView fitHeight="0.0" fitWidth="0.0" pickOnBounds="true" preserveRatio="true">
                    <Image url="@../../../resources/img/game02/orb01.png" />
                   </ImageView>
                 </graphic>
               </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="paneOrb2" layoutX="230.0" layoutY="-170.0" prefHeight="120.0" prefWidth="120.0">
+         <children>
+            <Label fx:id="word2" contentDisplay="CENTER" rotate="-90.0" styleClass="label-content" stylesheets="@../Theme.css" text="keyword">
+               <graphic>
+                  <ImageView fitHeight="0.0" fitWidth="0.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/img/game02/orb02.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="paneOrb3" layoutX="510.0" layoutY="-170.0" prefHeight="120.0" prefWidth="120.0">
+         <children>
+            <Label fx:id="word3" contentDisplay="CENTER" rotate="-90.0" styleClass="label-content" stylesheets="@../Theme.css" text="keyword">
+               <graphic>
+                  <ImageView fitHeight="0.0" fitWidth="0.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/img/game02/orb03.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="paneOrb4" layoutX="740.0" layoutY="-170.0" prefHeight="120.0" prefWidth="120.0">
+         <children>
+            <Label fx:id="word4" contentDisplay="CENTER" rotate="-90.0" styleClass="label-content" stylesheets="@../Theme.css" text="keyword">
+               <graphic>
+                  <ImageView fitHeight="0.0" fitWidth="0.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/img/game02/orb01.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="paneOrb5" layoutX="950.0" layoutY="-170.0" prefHeight="120.0" prefWidth="120.0">
+         <children>
+            <Label fx:id="word5" contentDisplay="CENTER" rotate="-90.0" styleClass="label-content" stylesheets="@../Theme.css" text="keyword">
+               <graphic>
+                  <ImageView fitHeight="0.0" fitWidth="0.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/img/game02/orb02.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
          </children>
       </AnchorPane>
    </children>
