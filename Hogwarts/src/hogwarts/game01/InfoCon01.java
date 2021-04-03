@@ -36,7 +36,7 @@ public class InfoCon01 implements Initializable {
 	}
 	
 	public void goHome() {
-		Optional<ButtonType> result = cs.alertConfirm("Return to the main page.");
+		Optional<ButtonType> result = cs.alertConfirm("Go back to the main page.");
 		if(result.get() == ButtonType.OK) {
 			loadPage("../mainPage");
 		} else { return; }
