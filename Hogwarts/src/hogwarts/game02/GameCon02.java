@@ -40,7 +40,7 @@ public class GameCon02 implements Initializable {
 	}
 	
 	private void setGameTitle() {
-		lblTitle.setText("Mystery Department");
+		lblTitle.setText("Department of Mysteries");
 	}
 	
 	private void lblScale() {

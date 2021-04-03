@@ -23,7 +23,7 @@
             <Font size="48.0" />
          </font>
       </Label>
-      <Label fx:id="lblGame02" alignment="CENTER" layoutY="304.0" onMouseClicked="#startGame02" prefWidth="1200.0" text="Mystery Department" visible="false">
+      <Label fx:id="lblGame02" alignment="CENTER" layoutY="304.0" onMouseClicked="#startGame02" prefWidth="1200.0" text="Department of Mysteries" visible="false">
          <font>
             <Font size="48.0" />
          </font>

@@ -43,11 +43,15 @@ public class InfoCon02 implements Initializable {
 	}
 	
 	private void setGameTitle() {
-		lblTitle.setText("Mystery Department");
+		lblTitle.setText("Department of Mysteries");
 	}
 	
 	private void setGameInfo() {
-		lblInfo.setText("Will be added soon.");
+		lblInfo.setText("You're in the Hall of Prophecy,\n"
+				+ "a chamber within the Department of Mysteries.\n"
+				+ "Type the prophecy recorded in each glass orb\n"
+				+ "before it fall down,\n"
+				+ "and save Harry Potter and his friends.");
 	}
 	
 	private void lblScale() {
