@@ -14,10 +14,16 @@
             <Font size="48.0" />
          </font>
       </Label>
-      <ImageView fx:id="testOrb" fitHeight="150.0" fitWidth="200.0" layoutX="3.0" layoutY="-168.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../resources/img/game02/temp.png" />
-         </image>
-      </ImageView>
+      <AnchorPane fx:id="paneOrb" layoutX="10.0" layoutY="-170" prefHeight="120.0" prefWidth="120.0">
+         <children>
+            <Label contentDisplay="CENTER" rotate="-90.0" styleClass="label-content" stylesheets="@../Theme.css" text="keyword">
+                <graphic>
+                  <ImageView fitHeight="0.0" fitWidth="0.0" pickOnBounds="true" preserveRatio="true">
+                   <Image url="@../../../resources/img/game02/orb01.png" />
+                  </ImageView>
+                </graphic>
+              </Label>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

@@ -26,9 +26,8 @@ import javafx.scene.shape.Path;
 import javafx.util.Duration;
 
 public class GameCon02 implements Initializable {
-	@FXML AnchorPane mainPane;
+	@FXML AnchorPane mainPane, paneOrb;
 	@FXML Label lblHome, lblTitle;
-	@FXML ImageView testOrb;
 	CommonService cs;
 	
 	@Override
@@ -36,10 +35,10 @@ public class GameCon02 implements Initializable {
 		cs = new CommonServiceImpl();
 		lblScale();
 		setGameTitle();
-		fallDown(testOrb, 150);
+		fallDown(paneOrb, 150);
 	}
 	
-	private void fallDown(ImageView orb, int axis) {
+	private void fallDown(AnchorPane orb, int axis) {
 		Path path = new Path();
 		path.getElements().add(new MoveTo(axis, -30));
 		path.getElements().add(new CubicCurveTo(axis + 100, 300, axis - 100, 600, axis, 1200));
