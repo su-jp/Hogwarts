@@ -32,7 +32,7 @@ public class InfoCon03 implements Initializable {
 	}
 	
 	public void startGame() {
-//		loadPage("gamePage03");
+		loadPage("gamePage03");
 	}
 	
 	public void goHome() {
@@ -47,7 +47,11 @@ public class InfoCon03 implements Initializable {
 	}
 	
 	private void setGameInfo() {
-		lblInfo.setText("Will be added soon.");
+		lblInfo.setText("Professor Umbridge has a clue to D.A.\n"
+				+ "and wants to interrogate you about it.\n"
+				+ "Find Veritaserum, which is as transparent as water,\n"
+				+ "out of the six potions.\n"
+				+ "If you fail, you'll be a traitor among your friends!");
 	}
 	
 	private void lblScale() {
