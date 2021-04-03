@@ -19,12 +19,16 @@ import hogwarts.common.MyLabelEventHandler;
 import hogwarts.common.MyLabelEventHandler02;
 import javafx.animation.PathTransition;
 import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.CubicCurveTo;
@@ -33,28 +37,67 @@ import javafx.scene.shape.Path;
 import javafx.util.Duration;
 
 public class GameCon02 implements Initializable {
-	@FXML
-	AnchorPane mainPane, paneOrb1, paneOrb2, paneOrb3, paneOrb4, paneOrb5;
-	@FXML
-	Label lblHome, lblTitle, word1, word2, word3, word4, word5;
+	@FXML private AnchorPane mainPane, paneOrb1, paneOrb2, paneOrb3, paneOrb4, paneOrb5;
+	@FXML private Label lblHome, lblTitle, word1, word2, word3, word4, word5, lblScore;
+	@FXML private TextField txtField;
 	CommonService cs;
 	List<String> words;
 	File wordTxt;
 	BufferedReader reader;
 	Random rand;
 	TimerTask tt, t1, t2, t3, t4;
-	int lightening;
+	int lightening, score;
+	String inputTxt;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		score = 0;
+		lightening = 3;
 		cs = new CommonServiceImpl();
 		words = new ArrayList<String>();
 		wordTxt = new File(".\\resources\\words.txt");
+		txtFieldEvent();
 		callWords();
-		lightening = 3;
 		lblScale();
 		setGameTitle();
 		setOrbs();
+	}
+	
+	private void setScore(int n) {
+		lblScore.setText(Integer.toString(n));
+	}
+	
+	private void compareTxts(String txt) {
+		if(txt.equals(word1.getText())) {
+			paneOrb1.setVisible(false);
+			score++;
+		} else if(txt.equals(word2.getText())) {
+			paneOrb2.setVisible(false);
+			score++;
+		} else if(txt.equals(word3.getText())) {
+			paneOrb3.setVisible(false);
+			score++;
+		} else if(txt.equals(word4.getText())) {
+			paneOrb4.setVisible(false);
+			score++;
+		} else if(txt.equals(word5.getText())) {
+			paneOrb5.setVisible(false);
+			score++;
+		}
+		setScore(score);
+	}
+	
+	private void txtFieldEvent() {
+		txtField.setOnKeyPressed(new EventHandler<KeyEvent>() {
+			@Override
+			public void handle(KeyEvent event) {
+				if(event.getCode() == KeyCode.ENTER) {
+					inputTxt = txtField.getText();
+					compareTxts(inputTxt);
+					txtField.clear();
+				}
+			}
+		});
 	}
 	
 	private void putWords(Label word) {

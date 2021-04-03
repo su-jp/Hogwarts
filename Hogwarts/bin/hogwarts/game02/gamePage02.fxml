@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainPane" prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hogwarts.game02.GameCon02">
+<AnchorPane fx:id="mainPane" prefHeight="900.0" prefWidth="1200.0" stylesheets="@../Theme.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hogwarts.game02.GameCon02">
    <children>
       <Label fx:id="lblHome" layoutX="30.0" layoutY="30.0" onMouseClicked="#goHome" styleClass="label-content" text="Go Home" />
       <Label fx:id="lblTitle" alignment="CENTER" layoutY="90.0" prefWidth="1200.0" text="Game Title">
@@ -77,5 +78,8 @@
             </Label>
          </children>
       </AnchorPane>
+      <TextField fx:id="txtField" layoutX="387.0" layoutY="781.0" prefHeight="57.0" prefWidth="427.0" styleClass="label-content" />
+      <Label alignment="CENTER" layoutX="1022.0" layoutY="30.0" onMouseClicked="#goHome" prefHeight="14.0" prefWidth="145.0" styleClass="label-content" text="Score" />
+      <Label fx:id="lblScore" alignment="CENTER" layoutX="1022.0" layoutY="76.0" onMouseClicked="#goHome" prefHeight="14.0" prefWidth="145.0" styleClass="label-content" text="0" />
    </children>
 </AnchorPane>

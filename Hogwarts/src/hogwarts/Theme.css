@@ -15,3 +15,9 @@
     -fx-text-fill: white;
     -fx-opacity: 1;
 }
+
+.text-field {
+    -fx-font-size: 20pt;
+    -fx-font-family: "New Tegomin";
+    -fx-text-fill: black;
+}
