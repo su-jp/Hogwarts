@@ -71,10 +71,13 @@ public class GameCon01 implements Initializable {
 				cardImg = new Image("file:resources/img/game01/card" + (countSet+1) + ".png");
 				images.get(num).setImage(cardImg);
 				countSet++;
-				idx.set(num, "Set");
+				if (countSet > 8) {
+					idx.set(num, Integer.toString(countSet - 8));
+				} else {
+					idx.set(num, Integer.toString(countSet));
+				}
 			}
 		}
-		
 	}
 	
 	private void fadeOut(ImageView card) {
@@ -87,60 +90,19 @@ public class GameCon01 implements Initializable {
 	}
 	
 	private void matching() {
-		if((cardSelected == card1 && cardSelected2 == card8) || 
-				(cardSelected == card8 && cardSelected2 == card1)) {
-			fadeOut(card1);
-			fadeOut(card8);
+		int selectedIdx1 = Integer.parseInt(cardSelected.getId().substring(4)) - 1;
+		int selectedIdx2 = Integer.parseInt(cardSelected2.getId().substring(4)) - 1;
+		if(idx.get(selectedIdx1).equals(idx.get(selectedIdx2))) {
+			fadeOut(images.get(selectedIdx1));
+			fadeOut(images.get(selectedIdx2));
+			images.get(selectedIdx1).setDisable(true);
+			images.get(selectedIdx2).setDisable(true);
 			match = 1;
 			count++;
-		} else if((cardSelected == card2 && cardSelected2 == card5) || 
-				(cardSelected == card5 && cardSelected2 == card2)) {
-			fadeOut(card2);
-			fadeOut(card5);
-			match = 1;
-			count++;
-		} else if((cardSelected == card3 && cardSelected2 == card4) || 
-				(cardSelected == card4 && cardSelected2 == card3)) {
-			fadeOut(card3);
-			fadeOut(card4);
-			match = 1;
-			count++;
-		} else if((cardSelected == card6 && cardSelected2 == card13) || 
-				(cardSelected == card13 && cardSelected2 == card6)) {
-			fadeOut(card6);
-			fadeOut(card13);
-			match = 1;
-			count++;
-		} else if((cardSelected == card7 && cardSelected2 == card12) || 
-				(cardSelected == card12 && cardSelected2 == card7)) {
-			fadeOut(card7);
-			fadeOut(card12);
-			match = 1;
-			count++;
-		} else if((cardSelected == card9 && cardSelected2 == card15) || 
-				(cardSelected == card15 && cardSelected2 == card9)) {
-			fadeOut(card9);
-			fadeOut(card15);
-			match = 1;
-			count++;
-		} else if((cardSelected == card10 && cardSelected2 == card11) || 
-				(cardSelected == card11 && cardSelected2 == card10)) {
-			fadeOut(card11);
-			fadeOut(card10);
-			match = 1;
-			count++;
-		} else if((cardSelected == card14 && cardSelected2 == card16) || 
-				(cardSelected == card16 && cardSelected2 == card14)) {
-			fadeOut(card14);
-			fadeOut(card16);
-			match = 1;
-			count++;
-		} else {
-//			cardSelected.setVisible(true);
-//			cardSelected2.setVisible(true);
 		}
+			
 		if(count == 8) {
-			cs.alert("You've defeated Lord Voldemort with " + (score+1) + " clicks!");
+			cs.alert("You've defeated Lord Voldemort with only " + (score+1) + " clicks!");
 			loadPage("../mainPage");
 		}
 	}
