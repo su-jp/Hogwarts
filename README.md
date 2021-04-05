@@ -16,6 +16,7 @@ ___
    - [✨첫번째 제작기✨](https://blog.naver.com/su_jp/222296750334)
 - 2021.04.03 두번째 게임 🔮 "미스터리 부서" 완성
    - [✨두번째 제작기✨](https://blog.naver.com/su_jp/222297636037)
+- 2021.04.05 세번째 게임 🙊 "거짓말을 하지 않겠습니다" 완성
 ___
 > ## 🎮 미리보기
 ### 🃏 첫번째 게임 "WARNING : Horcrux"
@@ -54,3 +55,20 @@ ___
       
       ![game2_03_done](https://user-images.githubusercontent.com/76279992/113478371-63dea000-94c3-11eb-83c2-a40a0b3b68c2.gif)
       
+- 이스터 에그
+   - 용서받지 못할 저주
+      
+      ![game2_04_easter](https://user-images.githubusercontent.com/76279992/113564946-26a21b80-9645-11eb-9ad1-5f15b6e581ce.gif)
+
+### 🙊 세번째 게임 "I MUST NOT TELL LIES"
+- 게임 시작
+   - 진입 및 진행
+   
+      ![game3_01_startNplay](https://user-images.githubusercontent.com/76279992/113564948-286bdf00-9645-11eb-97d4-6c1df42f8ae9.gif)
+      
+- 게임 종료
+   - 기회 소진 후 게임 종료
+   
+      ![game3_02_done](https://user-images.githubusercontent.com/76279992/113564949-286bdf00-9645-11eb-97c7-3e631d2a1cc4.gif)
+
+
