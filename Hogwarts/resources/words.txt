@@ -93,6 +93,8 @@ Bombarda
 Confringo
 Confundo
 Crucio
+Imperio
+AvadaKedavra
 Engorgio
 Episkey
 ExpectoPatronum
@@ -101,7 +103,6 @@ Expelliarmus
 FiniteIncantatem
 HarmoniaNecterePassus
 Immobulus
-Imperio
 Legilimens
 Levicorpus
 Lumos

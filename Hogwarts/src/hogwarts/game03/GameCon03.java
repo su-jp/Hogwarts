@@ -104,6 +104,7 @@ public class GameCon03 implements Initializable {
 			@Override
 			public void run() {
 				Platform.runLater(() -> {
+					if(life <= 0) { timer.cancel(); }
 					listIdx = rand.nextInt(6);
 					idxPotion = rand.nextInt(6) + 1;
 					quizImg = new Image("file:resources/img/game03/potion" + idxPotion + ".png");
@@ -112,7 +113,7 @@ public class GameCon03 implements Initializable {
 				});
 			}
 		};
-		timer.schedule(tt, 1, 400);
+		timer.schedule(tt, 500, 500);
 	}
 	
 	private void setQuiz() {

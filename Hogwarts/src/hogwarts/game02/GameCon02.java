@@ -41,7 +41,7 @@ public class GameCon02 implements Initializable {
 	@FXML private AnchorPane mainPane, paneOrb1, paneOrb2, paneOrb3, paneOrb4, paneOrb5;
 	@FXML private Label lblHome, lblTitle, word1, word2, word3, word4, word5, lblScore;
 	@FXML private TextField txtField;
-	@FXML private ImageView life1, life2, life3;
+	@FXML private ImageView life1, life2, life3, hiddenBG;
 	CommonService cs;
 	List<String> words, txtMatch;
 	Timer timer, timer2;
@@ -92,27 +92,34 @@ public class GameCon02 implements Initializable {
 	}
 	
 	private void compareTxts(String txt) {
+		boolean egg = false;
 		if(txt.equals(word1.getText())) {
 			paneOrb1.setVisible(false);
 			txtMatch.set(0, "dead");
 			score++;
+			egg = true;
 		} else if(txt.equals(word2.getText())) {
 			paneOrb2.setVisible(false);
 			txtMatch.set(1, "dead");
 			score++;
+			egg = true;
 		} else if(txt.equals(word3.getText())) {
 			paneOrb3.setVisible(false);
 			txtMatch.set(2, "dead");
 			score++;
+			egg = true;
 		} else if(txt.equals(word4.getText())) {
 			paneOrb4.setVisible(false);
 			txtMatch.set(3, "dead");
 			score++;
+			egg = true;
 		} else if(txt.equals(word5.getText())) {
 			paneOrb5.setVisible(false);
 			txtMatch.set(4, "dead");
 			score++;
+			egg = true;
 		}
+		if(egg) { runEaster(txt); }
 		setScore(score);
 	}
 	
@@ -157,7 +164,7 @@ public class GameCon02 implements Initializable {
 					if(life <= 0) { timer.cancel(); }
 					txtMatch.set(1, "alive");
 					paneOrb2.setVisible(true);
-					fallDown(paneOrb2, 150);
+					fallDown(paneOrb2);
 					putWords(word2);
 				});
 			}
@@ -170,7 +177,7 @@ public class GameCon02 implements Initializable {
 					if(life <= 0) { timer.cancel(); }
 					txtMatch.set(0, "alive");
 					paneOrb1.setVisible(true);
-					fallDown(paneOrb1, 150);
+					fallDown(paneOrb1);
 					putWords(word1);
 				});
 			}
@@ -183,7 +190,7 @@ public class GameCon02 implements Initializable {
 					if(life <= 0) { timer.cancel(); }
 					txtMatch.set(4, "alive");
 					paneOrb5.setVisible(true);
-					fallDown(paneOrb5, 150);
+					fallDown(paneOrb5);
 					putWords(word5);
 				});
 			}
@@ -196,7 +203,7 @@ public class GameCon02 implements Initializable {
 					if(life <= 0) { timer.cancel(); }
 					txtMatch.set(2, "alive");
 					paneOrb3.setVisible(true);
-					fallDown(paneOrb3, 150);
+					fallDown(paneOrb3);
 					putWords(word3);
 				});
 			}
@@ -209,7 +216,7 @@ public class GameCon02 implements Initializable {
 					if(life <= 0) { timer.cancel(); }
 					txtMatch.set(3, "alive");
 					paneOrb4.setVisible(true);
-					fallDown(paneOrb4, 150);
+					fallDown(paneOrb4);
 					putWords(word4);
 				});
 			}
@@ -270,10 +277,10 @@ public class GameCon02 implements Initializable {
 		timer2.schedule(tc5, 25000, 15000);
 	}
 
-	private void fallDown(AnchorPane orb, int axis) {
+	private void fallDown(AnchorPane orb) {
 		Path path = new Path();
-		path.getElements().add(new MoveTo(axis, -30));
-		path.getElements().add(new CubicCurveTo(axis + 100, 300, axis - 100, 600, axis, 1200));
+		path.getElements().add(new MoveTo(150, -30));
+		path.getElements().add(new CubicCurveTo(150 + 100, 300, 150 - 100, 600, 150, 1200));
 		PathTransition pathTransition = new PathTransition();
 		pathTransition.setDuration(Duration.millis(15000));
 		pathTransition.setPath(path);
@@ -311,6 +318,12 @@ public class GameCon02 implements Initializable {
 			mainPane.getChildren().add(root);
 		} catch (IOException e) {
 			e.printStackTrace();
+		}
+	}
+	
+	private void runEaster(String txt) {
+		if(txt.equals("Crucio") || txt.equals("Imperio") || txt.equals("AvadaKedavra")) {
+			hiddenBG.setVisible(true);
 		}
 	}
 }

@@ -10,6 +10,11 @@
 
 <AnchorPane fx:id="mainPane" prefHeight="900.0" prefWidth="1200.0" stylesheets="@../Theme.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hogwarts.game02.GameCon02">
    <children>
+      <ImageView fx:id="hiddenBG" fitHeight="900.0" fitWidth="1200.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../../resources/img/game02/easterEgg.jpg" />
+         </image>
+      </ImageView>
       <AnchorPane fx:id="paneOrb1" layoutX="0.0" layoutY="-170" prefHeight="120.0" prefWidth="120.0">
          <children>
             <Label fx:id="word1" contentDisplay="CENTER" rotate="-90.0" styleClass="label-dark" stylesheets="@../Theme.css" text="keyword">
