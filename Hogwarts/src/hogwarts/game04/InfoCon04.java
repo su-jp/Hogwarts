@@ -32,7 +32,7 @@ public class InfoCon04 implements Initializable {
 	}
 	
 	public void startGame() {
-		loadPage("gamePage03");
+		loadPage("gamePage04");
 	}
 	
 	public void goHome() {
@@ -43,11 +43,12 @@ public class InfoCon04 implements Initializable {
 	}
 	
 	private void setGameTitle() {
-		lblTitle.setText("Coming Soon");
+		lblTitle.setText("Battle of Hogwarts");
 	}
 	
 	private void setGameInfo() {
-		lblInfo.setText("Coming Soon");
+		lblInfo.setText("Voldemort and the Death Eaters invaded Hogwarts.\n"
+				+ "Defeat them with a wand and save the wizarding world.");
 	}
 	
 	private void lblScale() {

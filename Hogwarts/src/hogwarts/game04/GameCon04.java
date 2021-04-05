@@ -40,7 +40,7 @@ public class GameCon04 implements Initializable {
 	}
 	
 	private void setGameTitle() {
-		lblTitle.setText("Coming Soon");
+		lblTitle.setText("Battle of Hogwarts");
 	}
 	
 	private void lblScale() {

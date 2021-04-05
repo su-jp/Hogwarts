@@ -33,7 +33,7 @@
             <Font size="48.0" />
          </font>
       </Label>
-      <Label fx:id="lblGame04" alignment="CENTER" layoutY="527.0" onMouseClicked="#startGame04" prefWidth="1200.0" text="Coming Soon" visible="false">
+      <Label fx:id="lblGame04" alignment="CENTER" layoutY="527.0" onMouseClicked="#startGame04" prefWidth="1200.0" text="Battle of Hogwarts" visible="false">
          <font>
             <Font size="48.0" />
          </font>
