@@ -23,7 +23,7 @@ ___
 - 게임 시작
    - 진입 화면
    
-      ![game1_01_start](https://user-images.githubusercontent.com/76279992/113478373-64773680-94c3-11eb-81c9-b51a0948d43e.gif)
+      ![game1_01_start](https://user-images.githubusercontent.com/76279992/113566549-dc6e6980-9647-11eb-8614-e446e49c1380.gif)
 
 - 게임 진행
    - 플레이 화면
