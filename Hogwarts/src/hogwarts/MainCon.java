@@ -18,7 +18,7 @@ import javafx.scene.layout.AnchorPane;
 public class MainCon implements Initializable{
 	@FXML AnchorPane mainPane;
 	@FXML ImageView logo;
-	@FXML Label lblStart, lblGame01, lblGame02, lblGame03;
+	@FXML Label lblStart, lblGame01, lblGame02, lblGame03, lblGame04;
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -37,6 +37,10 @@ public class MainCon implements Initializable{
 		loadPage("game03/gameInfo03");
 	}
 	
+	public void startGame04() {
+		loadPage("game04/gameInfo04");
+	}
+	
 	public void logoDisappear() {
 		logo.setVisible(false);
 		lblStart.setVisible(false);
@@ -48,16 +52,19 @@ public class MainCon implements Initializable{
 		lblGame01.addEventHandler(MouseEvent.MOUSE_ENTERED, new MyLabelEventHandler());
 		lblGame02.addEventHandler(MouseEvent.MOUSE_ENTERED, new MyLabelEventHandler());
 		lblGame03.addEventHandler(MouseEvent.MOUSE_ENTERED, new MyLabelEventHandler());
+		lblGame04.addEventHandler(MouseEvent.MOUSE_ENTERED, new MyLabelEventHandler());
 		lblStart.addEventHandler(MouseEvent.MOUSE_EXITED, new MyLabelEventHandler02());
 		lblGame01.addEventHandler(MouseEvent.MOUSE_EXITED, new MyLabelEventHandler02());
 		lblGame02.addEventHandler(MouseEvent.MOUSE_EXITED, new MyLabelEventHandler02());
 		lblGame03.addEventHandler(MouseEvent.MOUSE_EXITED, new MyLabelEventHandler02());
+		lblGame04.addEventHandler(MouseEvent.MOUSE_EXITED, new MyLabelEventHandler02());
 	}
 	
 	private void menuAppear() {
 		lblGame01.setVisible(true);
 		lblGame02.setVisible(true);
 		lblGame03.setVisible(true);
+		lblGame04.setVisible(true);
 	}
 	
 	private void loadPage(String page) {

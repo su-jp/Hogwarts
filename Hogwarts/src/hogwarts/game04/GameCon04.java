@@ -1,4 +1,4 @@
-package hogwarts.game02;
+package hogwarts.game04;
 
 import java.io.IOException;
 import java.net.URL;
@@ -18,9 +18,9 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
-public class InfoCon02 implements Initializable {
+public class GameCon04 implements Initializable {
 	@FXML AnchorPane mainPane;
-	@FXML Label lblHome, lblTitle, lblInfo, lblStart;
+	@FXML Label lblHome, lblTitle;
 	CommonService cs;
 	
 	@Override
@@ -28,12 +28,9 @@ public class InfoCon02 implements Initializable {
 		cs = new CommonServiceImpl();
 		lblScale();
 		setGameTitle();
-		setGameInfo();
 	}
 	
-	public void startGame() {
-		loadPage("gamePage02");
-	}
+	
 	
 	public void goHome() {
 		Optional<ButtonType> result = cs.alertConfirm("Go back to the main page.");
@@ -43,22 +40,12 @@ public class InfoCon02 implements Initializable {
 	}
 	
 	private void setGameTitle() {
-		lblTitle.setText("Department of Mysteries");
-	}
-	
-	private void setGameInfo() {
-		lblInfo.setText("You're in the Hall of Prophecy,\n"
-				+ "a chamber within the Department of Mysteries.\n"
-				+ "Type the prophecy recorded in each glass orb\n"
-				+ "before it falls down to the floor,\n"
-				+ "and you'll save Harry Potter and his friends.");
+		lblTitle.setText("Coming Soon");
 	}
 	
 	private void lblScale() {
 		lblHome.addEventHandler(MouseEvent.MOUSE_ENTERED, new MyLabelEventHandler());
 		lblHome.addEventHandler(MouseEvent.MOUSE_EXITED, new MyLabelEventHandler02());
-		lblStart.addEventHandler(MouseEvent.MOUSE_ENTERED, new MyLabelEventHandler());
-		lblStart.addEventHandler(MouseEvent.MOUSE_EXITED, new MyLabelEventHandler02());
 	}
 	
 	private void loadPage(String page) {

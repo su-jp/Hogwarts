@@ -38,7 +38,7 @@ public class InfoCon03 implements Initializable {
 	public void goHome() {
 		Optional<ButtonType> result = cs.alertConfirm("Go back to the main page.");
 		if(result.get() == ButtonType.OK) {
-			loadPage("../mainPage");
+			loadPage("../MainPage");
 		} else { return; }
 	}
 	
@@ -49,9 +49,8 @@ public class InfoCon03 implements Initializable {
 	private void setGameInfo() {
 		lblInfo.setText("Professor Umbridge has a clue to D.A.\n"
 				+ "and wants to interrogate you about it.\n"
-				+ "Find Veritaserum, which is as transparent as water,\n"
-				+ "out of the six potions.\n"
-				+ "If you fail, you'll be a traitor among your friends!");
+				+ "Find and remove Veritaserum out of the six potions,\n"
+				+ "or you'll be a traitor among your friends!");
 	}
 	
 	private void lblScale() {

@@ -44,10 +44,11 @@ public class GameCon02 implements Initializable {
 	@FXML private ImageView life1, life2, life3;
 	CommonService cs;
 	List<String> words, txtMatch;
+	Timer timer, timer2;
+	TimerTask tt, t1, t2, t3, t4, tc1, tc2, tc3, tc4, tc5;
 	File wordTxt;
 	BufferedReader reader;
 	Random rand;
-	TimerTask tt, t1, t2, t3, t4, tc1, tc2, tc3, tc4, tc5;
 	int life, score;
 	String inputTxt;
 
@@ -56,6 +57,8 @@ public class GameCon02 implements Initializable {
 		score = 0;
 		life = 3;
 		cs = new CommonServiceImpl();
+		timer = new Timer();
+		timer2 = new Timer();
 		words = new ArrayList<String>();
 		txtMatch = new ArrayList<String>();
 		wordTxt = new File(".\\resources\\words.txt");
@@ -147,7 +150,6 @@ public class GameCon02 implements Initializable {
 
 	private void setOrbs() {
 		for(int i=0; i<5; i++) { txtMatch.add("alive"); }
-		Timer timer = new Timer();
 		tt = new TimerTask() {
 			@Override
 			public void run() {
@@ -214,7 +216,6 @@ public class GameCon02 implements Initializable {
 		};
 		timer.schedule(t4, 12000, 15000);
 		
-		Timer timer2 = new Timer();
 		tc1 = new TimerTask() {
 			@Override
 			public void run() {
@@ -286,7 +287,9 @@ public class GameCon02 implements Initializable {
 	public void goHome() {
 		Optional<ButtonType> result = cs.alertConfirm("Go back to the main page.");
 		if (result.get() == ButtonType.OK) {
-			loadPage("../mainPage");
+			timer.cancel();
+			timer2.cancel();
+			loadPage("../MainPage");
 		} else {
 			return;
 		}

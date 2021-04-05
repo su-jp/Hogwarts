@@ -1,4 +1,4 @@
-package hogwarts.game02;
+package hogwarts.game04;
 
 import java.io.IOException;
 import java.net.URL;
@@ -18,7 +18,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
-public class InfoCon02 implements Initializable {
+public class InfoCon04 implements Initializable {
 	@FXML AnchorPane mainPane;
 	@FXML Label lblHome, lblTitle, lblInfo, lblStart;
 	CommonService cs;
@@ -32,7 +32,7 @@ public class InfoCon02 implements Initializable {
 	}
 	
 	public void startGame() {
-		loadPage("gamePage02");
+		loadPage("gamePage03");
 	}
 	
 	public void goHome() {
@@ -43,15 +43,11 @@ public class InfoCon02 implements Initializable {
 	}
 	
 	private void setGameTitle() {
-		lblTitle.setText("Department of Mysteries");
+		lblTitle.setText("Coming Soon");
 	}
 	
 	private void setGameInfo() {
-		lblInfo.setText("You're in the Hall of Prophecy,\n"
-				+ "a chamber within the Department of Mysteries.\n"
-				+ "Type the prophecy recorded in each glass orb\n"
-				+ "before it falls down to the floor,\n"
-				+ "and you'll save Harry Potter and his friends.");
+		lblInfo.setText("Coming Soon");
 	}
 	
 	private void lblScale() {

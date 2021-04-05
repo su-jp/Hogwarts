@@ -18,6 +18,7 @@ public class MainClass extends Application {
 		Scene scene = new Scene(root);
 		primaryStage.setScene(scene);
 		primaryStage.setResizable(false);
+		primaryStage.setTitle("Hogwarts and the Mini Games");
 		scene.getStylesheets().add(MainClass.class.getResource("Theme.css").toExternalForm());
 		primaryStage.show();
 	}

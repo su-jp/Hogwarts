@@ -48,11 +48,11 @@ public class GameCon01 implements Initializable {
 		cs = new CommonServiceImpl();
 		images = new ArrayList<ImageView>();
 		idx = new ArrayList<String>();
-		lblScale();
-		imgScale();
+		setImageList();
+		lblEvent();
+		imgEvent();
 		setGameTitle();
 		setIndexList();
-		setImageList();
 		setImages();
 		score = 0;
 		turn = 0;
@@ -175,7 +175,7 @@ public class GameCon01 implements Initializable {
 	public void goHome() {
 		Optional<ButtonType> result = cs.alertConfirm("Go back to the main page.");
 		if(result.get() == ButtonType.OK) {
-			loadPage("../mainPage");
+			loadPage("../MainPage");
 		} else { return; }
 	}
 	
@@ -183,7 +183,7 @@ public class GameCon01 implements Initializable {
 		lblTitle.setText("WARNING : Horcrux");
 	}
 	
-	private void imgScale() {
+	private void imgEvent() {
 		card1.addEventHandler(MouseEvent.MOUSE_ENTERED, new MyImgEventHandler());
 		card2.addEventHandler(MouseEvent.MOUSE_ENTERED, new MyImgEventHandler());
 		card3.addEventHandler(MouseEvent.MOUSE_ENTERED, new MyImgEventHandler());
@@ -218,7 +218,7 @@ public class GameCon01 implements Initializable {
 		card16.addEventHandler(MouseEvent.MOUSE_EXITED, new MyImgEventHandler02());
 	}
 	
-	private void lblScale() {
+	private void lblEvent() {
 		lblHome.addEventHandler(MouseEvent.MOUSE_ENTERED, new MyLabelEventHandler());
 		lblHome.addEventHandler(MouseEvent.MOUSE_EXITED, new MyLabelEventHandler02());
 	}
