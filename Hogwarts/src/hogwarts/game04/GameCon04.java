@@ -15,21 +15,28 @@ import hogwarts.common.CommonServiceImpl;
 import hogwarts.common.MyLabelEventHandler;
 import hogwarts.common.MyLabelEventHandler02;
 import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.effect.Blend;
+import javafx.scene.effect.Glow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 public class GameCon04 implements Initializable {
 	@FXML AnchorPane mainPane;
 	@FXML Label lblHome, lblTitle, lblScore, lblSpell;
-	@FXML ImageView life1, life2, life3, imgKey1, imgKey2, imgKey3, imgKey4, imgKey5, imgKey6;
+	@FXML ImageView life1, life2, life3, keyUp, keyDown, keyLeft, keyRight,
+				imgKey1, imgKey2, imgKey3, imgKey4, imgKey5, imgKey6;
+	@FXML TextField txtField;
 	CommonService cs;
 	List<String> spells;
 	List<ImageView> keys;
@@ -38,7 +45,7 @@ public class GameCon04 implements Initializable {
 	Random rand;
 	Image quizImg;
 	int score, life, idx, keyNum;
-	String spell;
+	String spell, keyPressed;
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -55,6 +62,38 @@ public class GameCon04 implements Initializable {
 		setKeys();
 		callSpell();
 		callKeys();
+		tfEvent();
+	}
+	public void tfEvent() {
+		txtField.setOnKeyPressed(new EventHandler<KeyEvent>() {
+			@Override
+			public void handle(KeyEvent event) {
+				System.out.println("KeyCode: " + event.getCode());
+				if(!event.getCode().isArrowKey()) { return;	}
+				keyPressed = event.getCode().toString();
+				if(keyPressed.equals("UP")) {
+					keyUp.setEffect(new Glow());
+				} else if(keyPressed.equals("DOWN")) {
+					keyDown.setEffect(new Glow());
+				} else if(keyPressed.equals("LEFT")) {
+					keyLeft.setEffect(new Glow());
+				} else if(keyPressed.equals("RIGHT")) {
+					keyRight.setEffect(new Glow());
+				}
+				tt = new TimerTask() {
+					@Override
+					public void run() {
+						Platform.runLater(() -> {
+							keyUp.setEffect(new Blend());
+							keyDown.setEffect(new Blend());
+							keyLeft.setEffect(new Blend());
+							keyRight.setEffect(new Blend());
+						});
+					}
+				};
+				timer.schedule(tt, 100);
+			}
+		});
 	}
 	
 	private void callKeys() {
@@ -62,6 +101,7 @@ public class GameCon04 implements Initializable {
 			@Override
 			public void run() {
 				Platform.runLater(() -> {
+					txtField.requestFocus();
 					for(ImageView key : keys) {
 						keyNum = rand.nextInt(4) + 1;
 						quizImg = new Image("file:resources/img/game04/key" + keyNum + ".png");
