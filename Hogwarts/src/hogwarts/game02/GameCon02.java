@@ -289,7 +289,7 @@ public class GameCon02 implements Initializable {
 		if (result.get() == ButtonType.OK) {
 			timer.cancel();
 			timer2.cancel();
-			loadPage("../MainPage");
+			loadPage("../mainPage");
 		} else {
 			return;
 		}

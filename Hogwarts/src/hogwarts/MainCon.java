@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import hogwarts.common.MyLabelEventHandler;
 import hogwarts.common.MyLabelEventHandler02;
+import hogwarts.music.MusicMain;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -17,12 +18,19 @@ import javafx.scene.layout.AnchorPane;
 
 public class MainCon implements Initializable{
 	@FXML AnchorPane mainPane;
-	@FXML ImageView logo;
+	@FXML ImageView logo, imgPlay;
 	@FXML Label lblStart, lblGame01, lblGame02, lblGame03, lblGame04;
+	MusicMain mm;
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		mm = new MusicMain();
 		lblScale();
+	}
+	
+	public void musicStart() {
+		mm.start();
+		imgPlay.setVisible(false);
 	}
 	
 	public void startGame01() {

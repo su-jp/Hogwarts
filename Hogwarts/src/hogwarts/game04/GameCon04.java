@@ -106,7 +106,6 @@ public class GameCon04 implements Initializable {
 		txtField.setOnKeyPressed(new EventHandler<KeyEvent>() {
 			@Override
 			public void handle(KeyEvent event) {
-				System.out.println("KeyCode: " + event.getCode());
 				if(!event.getCode().isArrowKey()) { return;	}
 				keyPressed = event.getCode().toString();
 				if(keyPressed.equals("UP")) {
@@ -206,7 +205,7 @@ public class GameCon04 implements Initializable {
 		Optional<ButtonType> result = cs.alertConfirm("Go back to the main page.");
 		if(result.get() == ButtonType.OK) {
 			timer.cancel();
-			loadPage("../MainPage");
+			loadPage("../mainPage");
 		} else { return; }
 	}
 	
