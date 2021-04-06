@@ -106,7 +106,7 @@ public class GameCon04 implements Initializable {
 		txtField.setOnKeyPressed(new EventHandler<KeyEvent>() {
 			@Override
 			public void handle(KeyEvent event) {
-				if(!event.getCode().isArrowKey()) { return;	}
+				if(!event.getCode().isArrowKey()) { System.out.println("잘못된입력"); return; }
 				keyPressed = event.getCode().toString();
 				if(keyPressed.equals("UP")) {
 					keyUp.setEffect(new Glow());
@@ -122,6 +122,7 @@ public class GameCon04 implements Initializable {
 					chkKeys(3);
 				}
 				cycleIdx++;
+				if(cycleIdx == 6) { txtField.setDisable(true); }
 				tt = new TimerTask() {
 					@Override
 					public void run() {
@@ -146,6 +147,7 @@ public class GameCon04 implements Initializable {
 					if(numAnswer == 6) { getScore(); }
 					numAnswer = 0;
 					cycleIdx = 0;
+					txtField.setDisable(false);
 					txtField.requestFocus();
 					for(int i=0; i<6; i++) {
 						keys.get(i).setEffect(new Blend());
@@ -157,7 +159,7 @@ public class GameCon04 implements Initializable {
 				});
 			}
 		};
-		timer.schedule(tt, 1, 3000);
+		timer.schedule(tt, 1, 2500);
 	}
 	
 	private void callSpell() {

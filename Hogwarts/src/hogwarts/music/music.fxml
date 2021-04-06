@@ -14,6 +14,6 @@
          </image>
       </ImageView>
       <MediaView fx:id="mv" fitHeight="150.0" fitWidth="200.0" />
-      <Label alignment="CENTER" layoutY="47.0" prefHeight="57.0" prefWidth="200.0" stylesheets="@../Theme.css" text="BGM" />
+      <Label alignment="CENTER" layoutY="35.0" prefHeight="57.0" prefWidth="200.0" stylesheets="@../Theme.css" text="BGM" />
    </children>
 </AnchorPane>

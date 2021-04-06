@@ -4,7 +4,6 @@ import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.media.Media;
@@ -18,7 +17,10 @@ public class MusicCon implements Initializable {
 		Media music = new Media(new File("./resources/music.mp3").toURI().toString());
 		MediaPlayer mp = new MediaPlayer(music);
 		mv.setMediaPlayer(mp);
-		mp.setCycleCount(Timeline.INDEFINITE);
-		mp.setAutoPlay(true);
+		mp.play();
+		mp.setOnEndOfMedia(() -> {
+			mp.stop();
+			mp.play();
+		});
 	}
 }
