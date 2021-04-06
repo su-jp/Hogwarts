@@ -24,6 +24,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.Blend;
+import javafx.scene.effect.Bloom;
 import javafx.scene.effect.Glow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -40,11 +41,12 @@ public class GameCon04 implements Initializable {
 	CommonService cs;
 	List<String> spells;
 	List<ImageView> keys;
+	List<Integer> givenKeys;
 	Timer timer;
 	TimerTask tt;
 	Random rand;
 	Image quizImg;
-	int score, life, idx, keyNum;
+	int score, life, listIdx, keyNum, cycleIdx, numAnswer;
 	String spell, keyPressed;
 	
 	@Override
@@ -52,10 +54,12 @@ public class GameCon04 implements Initializable {
 		cs = new CommonServiceImpl();
 		spells = new ArrayList<String>();
 		keys  = new ArrayList<ImageView>();
+		givenKeys = new ArrayList<Integer>();
 		timer = new Timer();
 		rand = new Random();
 		score = 0;
 		life = 3;
+		numAnswer = 0;
 		lblScale();
 		setGameTitle();
 		setSpells();
@@ -64,6 +68,40 @@ public class GameCon04 implements Initializable {
 		callKeys();
 		tfEvent();
 	}
+	
+	private void countdown() {
+		if(life <= 0) { return; }
+		if(life3.isVisible()) {
+			life3.setVisible(false);
+			life--;
+		} else if(life2.isVisible()) {
+			life2.setVisible(false);
+			life--;
+		} else {
+			life1.setVisible(false);
+			life--;
+			cs.alert("Game Over!\n"
+					+ "You defeated " + score + " enemies in the battle!");
+			loadPage("../mainPage");
+			timer.cancel();
+		}
+	}
+	
+	private void getScore() {
+		score++;
+		lblScore.setText(Integer.toString(score));
+	}
+	
+	private void chkKeys(int n) {
+		if(givenKeys.get(cycleIdx) == n) {
+			keys.get(cycleIdx).setEffect(new Bloom());
+			numAnswer++;
+		} else {
+			keys.get(cycleIdx).setImage(new Image("file:resources/img/game04/key"+givenKeys.get(cycleIdx)+"gray.png"));
+			countdown();
+		}
+	}
+	
 	public void tfEvent() {
 		txtField.setOnKeyPressed(new EventHandler<KeyEvent>() {
 			@Override
@@ -73,13 +111,18 @@ public class GameCon04 implements Initializable {
 				keyPressed = event.getCode().toString();
 				if(keyPressed.equals("UP")) {
 					keyUp.setEffect(new Glow());
+					chkKeys(2);
 				} else if(keyPressed.equals("DOWN")) {
 					keyDown.setEffect(new Glow());
+					chkKeys(4);
 				} else if(keyPressed.equals("LEFT")) {
 					keyLeft.setEffect(new Glow());
+					chkKeys(1);
 				} else if(keyPressed.equals("RIGHT")) {
 					keyRight.setEffect(new Glow());
+					chkKeys(3);
 				}
+				cycleIdx++;
 				tt = new TimerTask() {
 					@Override
 					public void run() {
@@ -91,7 +134,7 @@ public class GameCon04 implements Initializable {
 						});
 					}
 				};
-				timer.schedule(tt, 100);
+				if(life > 0) { timer.schedule(tt, 100); }
 			}
 		});
 	}
@@ -101,11 +144,16 @@ public class GameCon04 implements Initializable {
 			@Override
 			public void run() {
 				Platform.runLater(() -> {
+					if(numAnswer == 6) { getScore(); }
+					numAnswer = 0;
+					cycleIdx = 0;
 					txtField.requestFocus();
-					for(ImageView key : keys) {
+					for(int i=0; i<6; i++) {
+						keys.get(i).setEffect(new Blend());
 						keyNum = rand.nextInt(4) + 1;
 						quizImg = new Image("file:resources/img/game04/key" + keyNum + ".png");
-						key.setImage(quizImg);
+						keys.get(i).setImage(quizImg);
+						givenKeys.set(i, keyNum);
 					};
 				});
 			}
@@ -118,8 +166,8 @@ public class GameCon04 implements Initializable {
 			@Override
 			public void run() {
 				Platform.runLater(() -> {
-					idx = rand.nextInt(spells.size());
-					spell = spells.get(idx);
+					listIdx = rand.nextInt(spells.size());
+					spell = spells.get(listIdx);
 					lblSpell.setText(spell);
 				});
 			}
@@ -134,6 +182,9 @@ public class GameCon04 implements Initializable {
 		keys.add(imgKey4);
 		keys.add(imgKey5);
 		keys.add(imgKey6);
+		for(int i=0; i<6; i++) {
+			givenKeys.add(0);
+		}
 	}
 	
 	private void setSpells() {

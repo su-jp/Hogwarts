@@ -73,8 +73,9 @@ public class GameCon03 implements Initializable {
 			life2.setVisible(false);
 			life--;
 		} else {
-			life3.setVisible(false);
+			life1.setVisible(false);
 			life--;
+			timer.cancel();
 			cs.alert("Game Over!\n"
 					+ "You kept " + score + " secrets from Professor Umbridge!");
 			loadPage("../mainPage");

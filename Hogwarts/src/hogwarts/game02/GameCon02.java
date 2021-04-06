@@ -78,12 +78,14 @@ public class GameCon02 implements Initializable {
 			life2.setVisible(false);
 			life--;
 		} else {
-			life3.setVisible(false);
+			life1.setVisible(false);
 			life--;
 			txtField.setDisable(true);
 			cs.alert("Game Over!\n"
 					+ "You've saved " + score + " glass orbs!");
 			loadPage("../mainPage");
+			timer.cancel();
+			timer2.cancel();
 		}
 	}
 	
@@ -161,7 +163,6 @@ public class GameCon02 implements Initializable {
 			@Override
 			public void run() {
 				Platform.runLater(() -> {
-					if(life <= 0) { timer.cancel(); }
 					txtMatch.set(1, "alive");
 					paneOrb2.setVisible(true);
 					fallDown(paneOrb2);
@@ -174,7 +175,6 @@ public class GameCon02 implements Initializable {
 			@Override
 			public void run() {
 				Platform.runLater(() -> {
-					if(life <= 0) { timer.cancel(); }
 					txtMatch.set(0, "alive");
 					paneOrb1.setVisible(true);
 					fallDown(paneOrb1);
@@ -187,7 +187,6 @@ public class GameCon02 implements Initializable {
 			@Override
 			public void run() {
 				Platform.runLater(() -> {
-					if(life <= 0) { timer.cancel(); }
 					txtMatch.set(4, "alive");
 					paneOrb5.setVisible(true);
 					fallDown(paneOrb5);
@@ -200,7 +199,6 @@ public class GameCon02 implements Initializable {
 			@Override
 			public void run() {
 				Platform.runLater(() -> {
-					if(life <= 0) { timer.cancel(); }
 					txtMatch.set(2, "alive");
 					paneOrb3.setVisible(true);
 					fallDown(paneOrb3);
@@ -227,7 +225,6 @@ public class GameCon02 implements Initializable {
 			@Override
 			public void run() {
 				Platform.runLater(() -> {
-					if(life <= 0) { timer2.cancel(); }
 					if(txtMatch.get(1).equals("alive")) {
 						countdown();
 					}
@@ -239,7 +236,6 @@ public class GameCon02 implements Initializable {
 			@Override
 			public void run() {
 				Platform.runLater(() -> {
-					if(life <= 0) { timer2.cancel(); }
 					if(txtMatch.get(0).equals("alive")) { countdown(); }
 				});
 			}
@@ -249,7 +245,6 @@ public class GameCon02 implements Initializable {
 			@Override
 			public void run() {
 				Platform.runLater(() -> {
-					if(life <= 0) { timer2.cancel(); }
 					if(txtMatch.get(4).equals("alive")) { countdown(); }
 				});
 			}
@@ -259,7 +254,6 @@ public class GameCon02 implements Initializable {
 			@Override
 			public void run() {
 				Platform.runLater(() -> {
-					if(life <= 0) { timer2.cancel(); }
 					if(txtMatch.get(2).equals("alive")) { countdown(); }
 				});
 			}
@@ -269,7 +263,6 @@ public class GameCon02 implements Initializable {
 			@Override
 			public void run() {
 				Platform.runLater(() -> {
-					if(life <= 0) { timer2.cancel(); }
 					if(txtMatch.get(3).equals("alive")) { countdown(); }
 				});
 			}
