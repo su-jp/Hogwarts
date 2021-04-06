@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import hogwarts.common.MyImgEventHandler;
+import hogwarts.common.MyImgEventHandler02;
 import hogwarts.common.MyLabelEventHandler;
 import hogwarts.common.MyLabelEventHandler02;
 import hogwarts.music.MusicMain;
@@ -25,7 +27,8 @@ public class MainCon implements Initializable{
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		mm = new MusicMain();
-		lblScale();
+		lblEvent();
+		imgEvent();
 	}
 	
 	public void musicStart() {
@@ -55,7 +58,12 @@ public class MainCon implements Initializable{
 		menuAppear();
 	}
 	
-	private void lblScale() {
+	private void imgEvent() {
+		imgPlay.addEventHandler(MouseEvent.MOUSE_ENTERED, new MyImgEventHandler());
+		imgPlay.addEventHandler(MouseEvent.MOUSE_EXITED, new MyImgEventHandler02());
+	}
+	
+	private void lblEvent() {
 		lblStart.addEventHandler(MouseEvent.MOUSE_ENTERED, new MyLabelEventHandler());
 		lblGame01.addEventHandler(MouseEvent.MOUSE_ENTERED, new MyLabelEventHandler());
 		lblGame02.addEventHandler(MouseEvent.MOUSE_ENTERED, new MyLabelEventHandler());

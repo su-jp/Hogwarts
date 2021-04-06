@@ -90,6 +90,7 @@ public class GameCon03 implements Initializable {
 	private void chkEqual(ImageView potion) {
 		int select = Integer.parseInt(potion.getId().substring(6)) - 1;
 		if(colors.get(select) == answer) {
+			colors.set(select, 0);
 			getScore();
 		} else {
 			countdown();

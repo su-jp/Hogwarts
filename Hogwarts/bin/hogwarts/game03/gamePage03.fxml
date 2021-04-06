@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -35,31 +36,49 @@
                <image>
                   <Image url="@../../../resources/img/game03/potion0.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
             <ImageView fx:id="potion2" fitHeight="250.0" fitWidth="210.0" layoutX="31.0" layoutY="222.0" onMouseClicked="#getPotionNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <image>
                   <Image url="@../../../resources/img/game03/potion0.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
             <ImageView fx:id="potion3" fitHeight="250.0" fitWidth="210.0" layoutX="31.0" layoutY="222.0" onMouseClicked="#getPotionNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <image>
                   <Image url="@../../../resources/img/game03/potion0.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
             <ImageView fx:id="potion4" fitHeight="250.0" fitWidth="210.0" layoutX="31.0" layoutY="222.0" onMouseClicked="#getPotionNum" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <image>
                   <Image url="@../../../resources/img/game03/potion0.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
             <ImageView fx:id="potion5" fitHeight="250.0" fitWidth="210.0" layoutX="31.0" layoutY="222.0" onMouseClicked="#getPotionNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <image>
                   <Image url="@../../../resources/img/game03/potion0.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
             <ImageView fx:id="potion6" fitHeight="250.0" fitWidth="210.0" layoutX="31.0" layoutY="222.0" onMouseClicked="#getPotionNum" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <image>
                   <Image url="@../../../resources/img/game03/potion0.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
             <Label styleClass="label-content" text="Veritaserum" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
          </children>

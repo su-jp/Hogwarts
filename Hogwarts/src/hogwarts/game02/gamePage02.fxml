@@ -65,7 +65,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="paneOrb5" layoutX="920.0" layoutY="-170.0" prefHeight="120.0" prefWidth="120.0">
+      <AnchorPane fx:id="paneOrb5" layoutX="890.0" layoutY="-170.0" prefHeight="120.0" prefWidth="120.0">
          <children>
             <Label fx:id="word5" contentDisplay="CENTER" rotate="-90.0" styleClass="label-dark" stylesheets="@../Theme.css" text="keyword">
                <graphic>
