@@ -19,6 +19,7 @@ public class MusicMain {
 		}
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
+		stage.setTitle("BGM");
 		stage.show();
 	}
 }

@@ -173,7 +173,7 @@ public class GameCon04 implements Initializable {
 				});
 			}
 		};
-		timer.schedule(tt, 1, 3000);
+		timer.schedule(tt, 1, 2500);
 	}
 	
 	private void setKeys() {
