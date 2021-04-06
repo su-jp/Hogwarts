@@ -1,5 +1,6 @@
 > ## 🏰 호그와트와 미니 게임
 - 해리포터 컨셉의 네 가지 미니 게임 🕹
+   - [✨블로그 포스팅✨](https://blog.naver.com/su_jp/222296750334)에서 제작기를 확인할 수 있어요 😉
 ___
 > ## 💻 기술
 - [x] Java
@@ -60,7 +61,7 @@ ___
 - 게임 종료
    - 기회 소진 후 게임 종료
       
-      ![game2_03_done](https://user-images.githubusercontent.com/76279992/113478371-63dea000-94c3-11eb-83c2-a40a0b3b68c2.gif)
+      ![game2_03_done](https://user-images.githubusercontent.com/76279992/113712532-368f2d80-9721-11eb-87df-e3231266afd7.gif)
       
 - 이스터 에그
    - 용서받지 못할 저주
@@ -76,7 +77,7 @@ ___
 - 게임 종료
    - 기회 소진 후 게임 종료
    
-      ![game3_02_done](https://user-images.githubusercontent.com/76279992/113564949-286bdf00-9645-11eb-97c7-3e631d2a1cc4.gif)
+      ![game3_02_done](https://user-images.githubusercontent.com/76279992/113712538-3858f100-9721-11eb-91c9-9ebadcede698.gif)
 
 ### 🧙‍♂️ 마지막 게임 "Battle of Hogwarts"
 
