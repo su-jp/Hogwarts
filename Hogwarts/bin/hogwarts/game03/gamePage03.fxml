@@ -64,10 +64,10 @@
             <Label styleClass="label-content" text="Veritaserum" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
          </children>
       </GridPane>
-      <Label alignment="CENTER" layoutX="1032.0" layoutY="20.0" onMouseClicked="#goHome" prefHeight="14.0" prefWidth="145.0" styleClass="label-content" text="Score" />
-      <Label fx:id="lblScore" alignment="CENTER" layoutX="1032.0" layoutY="66.0" onMouseClicked="#goHome" prefHeight="14.0" prefWidth="145.0" styleClass="label-content" text="0" />
-      <Label alignment="CENTER" layoutX="1032.0" layoutY="169.0" onMouseClicked="#goHome" prefHeight="14.0" prefWidth="145.0" styleClass="label-content" text="Life" />
-      <HBox layoutX="1005.0" layoutY="208.0" prefHeight="64.0" prefWidth="200.0">
+      <Label alignment="CENTER" layoutX="1027.0" layoutY="20.0" onMouseClicked="#goHome" prefHeight="14.0" prefWidth="145.0" styleClass="label-content" text="Score" />
+      <Label fx:id="lblScore" alignment="CENTER" layoutX="1027.0" layoutY="66.0" onMouseClicked="#goHome" prefHeight="14.0" prefWidth="145.0" styleClass="label-content" text="0" />
+      <Label alignment="CENTER" layoutX="1027.0" layoutY="169.0" onMouseClicked="#goHome" prefHeight="14.0" prefWidth="145.0" styleClass="label-content" text="Life" />
+      <HBox layoutX="1000.0" layoutY="208.0" prefHeight="64.0" prefWidth="200.0">
          <children>
             <ImageView fx:id="life1" fitHeight="63.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
                <image>

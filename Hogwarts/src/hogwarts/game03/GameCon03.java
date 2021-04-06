@@ -48,6 +48,7 @@ public class GameCon03 implements Initializable {
 		timer = new Timer();
 		potions = new ArrayList<ImageView>();
 		colors = new ArrayList<Integer>();
+		score = 0;
 		life = 3;
 		lblScale();
 		numPotions();

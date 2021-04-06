@@ -322,7 +322,8 @@ public class GameCon02 implements Initializable {
 	}
 	
 	private void runEaster(String txt) {
-		if(txt.equals("Crucio") || txt.equals("Imperio") || txt.equals("AvadaKedavra")) {
+		if(txt.equals("Crucio") || txt.equals("Imperio") ||
+				txt.equals("AvadaKedavra") || txt.equals("Morsmordre")) {
 			hiddenBG.setVisible(true);
 		}
 	}
